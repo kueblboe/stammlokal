@@ -1,0 +1,18 @@
+<template name="places">
+  <div class="page places">
+    {{> nav title='Lokale' black=true}}
+
+    <div class="content-scrollable">
+      <div class="list-places">
+        {{#each this}}
+          {{#if highlighted}}
+            {{> placeItem place=this size='large'}}
+          {{else}}
+            {{> placeItem place=this size='small'}}
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+
+  </div>
+</template>

@@ -1,0 +1,50 @@
+<template name="place">
+
+  <div class="page place {{activeTabClass}}">
+    {{#nav title=title black=true back=true}}
+      {{#if bookmarked}}
+        <a href="#" class="nav-item js-remove-bookmark bookmarked"><span class="icon-bookmark"></span></a>
+      {{else}}
+        <a href="#" class="nav-item js-add-bookmark"><span class="icon-bookmark-hollow"></span></a>
+      {{/if}}
+    {{/nav}}
+
+    <div class="image-place" style="background-image: url('{{placeImage place=this size='full'}}')"></div>
+
+    <div class="attribution-place js-uncollapse">
+      <h1 class="title-place">{{title}}</h1>
+      <div class="metadata-wrapper">
+        <p class="description-place">{{excerpt}}</p>
+        <span class="source">{{distance}}</span>
+        <span class="time">{{time}}</span>
+      </div>
+
+      <div class="btns-group">
+        <a class="btn-secondary {{#if isActiveTab 'make'}}active{{/if}} {{#if isActiveTab 'place'}}no-state{{/if}} js-show-place">Speisekarte</a>
+        <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'place'}}no-state{{/if}} js-show-feed">Vorbestellen</a>
+      </div>
+    </div>
+
+
+    <div class="content-scrollable static-nav make-scrollable">
+      <h2 class="list-title">Essen</h2>
+      <ul class="list-ingredients">
+        {{#each ingredients}}
+          <li class="item-ingredient">{{this}}</li>
+        {{/each}}
+      </ul>
+
+      <h2 class="list-title">Trinken</h2>
+      <ol class="list-directions">
+        {{#each directions}}
+          <li class="item-direction">
+            <span class="text">{{this}}</span>
+          </li>
+        {{/each}}
+          <li class="item-direction">
+          ...
+          </li>
+      </ol>
+    </div>
+  </div>
+</template>

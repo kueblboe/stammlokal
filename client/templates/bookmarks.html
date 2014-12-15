@@ -1,0 +1,18 @@
+<template name="bookmarks">
+  <div class="page bookmarks">
+    {{> nav title='Deine Stammlokale' subtext=placeCount}}
+
+    <div class="content-scrollable">
+      <div class="list-places">
+        {{#each this}}
+          {{> placeItem place=this size='large'}}
+        {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">Noch keine Stammlokale</div>
+            <div class="subtitle-message">Tippe auf <span class="icon-bookmark-hollow"></span>, um deine Stammlokale zu markieren. <a href="{{pathFor 'recipies'}}">Zurück zu allen Lokalen</a></div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

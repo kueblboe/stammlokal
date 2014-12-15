@@ -1,0 +1,15 @@
+<template name="placeItem">
+  <a class="item-place {{highlightedClass}}" href="{{path}}">
+    {{#with place}}
+      <span class="attribution">
+        <span class="title-place">{{title}}</span>
+        <span class="metadata-place">
+          <span class="author-place">{{time}}</span>
+          <span class="bookmarks-place"><span class="icon-bookmark"></span> {{bookmarkCount}}</span>
+        </span>
+      </span>
+    {{/with}}
+
+    <img src="{{placeImage place=place size=size}}" />
+  </a>
+</template>

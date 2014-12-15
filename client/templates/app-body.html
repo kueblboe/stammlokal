@@ -1,0 +1,75 @@
+<template name="appBody">
+  <div class="wrapper-welcome">
+    <div class="title-welcome">Stammlokal</div>
+    <div class="description-welcome">
+    Diese Anwendung ist für mobile Endgeräte optimiert. Nichtsdestotrotz kannst du sie auch hier benutzen.
+    </div>
+
+    <div class="description-welcome">
+    App Store Link
+    </div>
+
+    <div class="description-welcome">
+    Play Store Link
+    </div>
+  </div>
+
+  <div id="container" class="{{menuOpen}} {{overlayOpen}}">
+    <section id="menu" class="overthrow">
+      <a href="{{pathFor 'places'}}" class="{{activePage 'places' 'place'}}">
+        <span class="wrapper-menu-item">
+          <span class="icon-category"></span>
+          <span class="title-menu">Lokale</span>
+        </span>
+      </a>
+      <a href="{{pathFor 'bookmarks'}}" class="{{activePage 'bookmarks'}}">
+        <span class="wrapper-menu-item">
+          <span class="icon-bookmark-hollow"></span>
+          <span class="title-menu">Stammlokale</span>
+        </span>
+      </a>
+      <a href="{{pathFor 'orders'}}" class="{{activePage 'orders'}}">
+        <span class="wrapper-menu-item">
+          <span><i class="fa fa-cutlery"></i></span>
+          <span class="title-menu">Bestellungen</span>
+        </span>
+      </a>
+      <a href="{{pathFor 'my-place'}}" class="{{activePage 'my-place'}}">
+        <span class="wrapper-menu-item">
+          <span class="icon-home"></span>
+          <span class="title-menu">Mein Lokal</span>
+        </span>
+      </a>
+      <a href="{{pathFor 'about'}}" class="{{activePage 'about'}}">
+        <span class="wrapper-menu-item">
+          <span class="icon-question"></span>
+          <span class="title-menu">Über uns</span>
+        </span>
+      </a>
+    </section>
+
+    <div class="notifications">
+      {{#unless connected}}
+        <div class="notification">
+          <span class="icon-sync"></span>
+          <div class="title-notification">Trying to connect</div>
+        </div>
+      {{/unless}}
+      {{#each notifications}}
+        <div class="notification">
+          <a class="btn-primary js-notification-action">{{action}}</a>
+          <div class="title-notification">{{title}}</div>
+        </div>
+      {{/each}}
+    </div>
+
+    {{> overlay}}
+
+    <div class="content-overlay"></div>
+
+    <div id="content-container">
+      {{> yield}}
+    </div>
+
+  </div>
+</template>
