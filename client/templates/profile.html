@@ -1,0 +1,11 @@
+<template name="profile">
+  <div class="page profile">
+    {{> nav title='Profil'}}
+    <div class="content-scrollable">
+      <div class="wrapper-message">
+        <img class="avatar" src={{services.twitter.profile_image_url_https}} alt="Profilbild"/>
+        <div>{{profile.name}}</div>
+      </div>
+    </div>
+  </div>
+</template>
