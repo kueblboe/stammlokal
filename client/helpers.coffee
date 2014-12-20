@@ -3,10 +3,10 @@
   if _.isUndefined(n)
     return thing
   else if n isnt 1
-    if thing.slice(-1) is "s"
-      plural = thing + "es"
+    if thing.slice(-1) is "e"
+      plural = thing + "n"
     else
-      plural = thing + "s"
+      plural = thing + "e"
   if options and options.hash and options.hash.wordOnly
     plural
   else
