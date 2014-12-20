@@ -1,7 +1,7 @@
 <template name="place">
 
   <div class="page place {{activeTabClass}}">
-    {{#nav title=title black=true back=true}}
+    {{#nav title='Lokal' black=true back=true}}
       {{#if bookmarked}}
         <a href="#" class="nav-item js-remove-bookmark bookmarked"><span class="icon-bookmark"></span></a>
       {{else}}
@@ -19,7 +19,7 @@
         <span class="time">{{time}}</span>
       </div>
 
-      <div class="btns-group">
+      <div class="btns-group slide">
         <a class="btn-secondary {{#if isActiveTab 'make'}}active{{/if}} {{#if isActiveTab 'place'}}no-state{{/if}} js-show-place">Speisekarte</a>
         <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'place'}}no-state{{/if}} js-show-feed">Vorbestellen</a>
       </div>
@@ -45,6 +45,19 @@
           ...
           </li>
       </ol>
+    </div>
+
+    <div class="content-scrollable static-nav feed-scrollable">
+      <form class="order-form">
+        <textarea id="text" rows="15" placeholder="Was möchtest du essen?"></textarea>
+        <div class="btns-group">
+          <a class="btn-tertiary {{#if isActiveTime 15}}active{{/if}} js-select-15">15 min</a>
+          <a class="btn-tertiary {{#if isActiveTime 30}}active{{/if}} js-select-30">30 min</a>
+          <a class="btn-tertiary {{#if isActiveTime 45}}active{{/if}} js-select-45">45 min</a>
+          <a class="btn-tertiary {{#if isActiveTime 60}}active{{/if}} js-select-60">60 min</a>
+        </div>
+        <button type="submit" class="btn-primary">Vorbestellen</button>
+      </form>
     </div>
   </div>
 </template>

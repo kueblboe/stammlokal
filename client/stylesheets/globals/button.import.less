@@ -3,7 +3,7 @@
   // Sizing
   .font-s2;
   line-height: 22px !important; //override line-height always so we can use em's to size.
-  padding: 1.2em 1.25em .95em; // 48px tall
+  padding: 1.2em 0.5em .95em; // 48px tall
 
   // Style
   .type-black;
@@ -52,7 +52,10 @@
     background: @color-raw;
     color: @color-primary;
 
-    &:hover { background-color: @color-raw; }
+    &:hover { background-color: darken(@color-raw, 5%); }
+    &.active {
+      background: darken(@color-raw, 10%);
+    }
   }
 
   &[class*="twitter"] {

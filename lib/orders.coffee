@@ -5,6 +5,7 @@ Meteor.methods
     check @userId, String
     check placeName, String
     check text, String
+    check minutes, Number
     Orders.insert
       userId: @userId
       placeName: placeName

@@ -1,9 +1,9 @@
 TAB_KEY = "placeShowTab"
+TIME_KEY = "orderTime"
+
 Template.place.created = ->
-  if Router.current().params.activityId
-    Template.place.setTab "feed"
-  else
-    Template.place.setTab "place"
+  Template.place.setTab "place"
+  Session.set TIME_KEY, 30
 
 Template.place.rendered = ->
   @$(".place").touchwipe
@@ -38,8 +38,23 @@ Template.place.helpers
   activeTabClass: ->
     Session.get TAB_KEY
 
+  isActiveTime: (minutes) ->
+    Session.equals TIME_KEY, minutes
+
   bookmarked: ->
     Meteor.user() and _.include(Meteor.user().bookmarkedPlaceNames, @name)
+
+Template.place.events
+  "submit form": (e) ->
+    e.preventDefault()
+    text = $(e.target).find("#text").val()
+    time = Session.get TIME_KEY
+
+    Meteor.call "order", @title, text, time, (error) ->
+      if error
+        throwError error.reason
+      else
+        Router.go 'orders'
 
 Template.place.events
   "click .js-add-bookmark": (event) ->
@@ -58,6 +73,22 @@ Template.place.events
   "click .js-show-feed": (event) ->
     event.stopPropagation()
     Template.place.setTab "feed"
+
+  "click .js-select-15": (event) ->
+    event.stopPropagation()
+    Session.set TIME_KEY, 15
+
+  "click .js-select-30": (event) ->
+    event.stopPropagation()
+    Session.set TIME_KEY, 30
+
+  "click .js-select-45": (event) ->
+    event.stopPropagation()
+    Session.set TIME_KEY, 45
+
+  "click .js-select-60": (event) ->
+    event.stopPropagation()
+    Session.set TIME_KEY, 60
 
   "click .js-uncollapse": ->
     Template.place.setTab "place"

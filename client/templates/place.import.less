@@ -91,9 +91,11 @@
   }
 
   .btns-group {
-    .position(absolute, auto, 0, 0, 0, 100%, 3em);
     background: @color-medium-well;
     z-index:1;
+    &.slide {
+      .position(absolute, auto, 0, 0, 0, 100%, 3em);
+    }
   }
 
   .btn-tertiary {
@@ -191,6 +193,18 @@
     .transform(translate3d(0,100%,0));
     max-height: 0;
     opacity: 0;
+  }
+
+  .order-form {
+    textarea {
+      width: 100%;
+    }
+  }
+
+  .btn-primary {
+    .position(absolute, auto, 0, 0, 0, 100%, 3rem);
+    .transform(translate3d(0,0,0));//gpu rendering
+    display: block;
   }
 }
 
