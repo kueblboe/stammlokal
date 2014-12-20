@@ -20,4 +20,6 @@ oauth1
 request
 launch-screen
 coffeescript
+momentjs:moment
+copleykj:livestamp
 

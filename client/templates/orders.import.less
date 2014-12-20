@@ -1,0 +1,52 @@
+.page.orders {
+  .content-scrollable { padding-bottom: 3em; }
+
+  .list-orders {
+    color: @color-well;
+    margin-top: 3em;
+
+    p {
+      .font-s3;
+      padding: 1em 1.25em;
+      border-bottom: solid 1px @color-well;
+      position: relative;
+    }
+  }
+
+  .btn-primary {
+    .position(absolute, auto, 0, 0, 0, 100%, 3rem);
+    .transform(translate3d(0,0,0));//gpu rendering
+    display: block;
+  }
+
+  .order {
+    padding-top: 1.25em;
+    text-align: center;
+    z-index: 1;
+
+    .text {
+      .font-s3;
+      color: @color-well;
+      margin-bottom: .5rem;
+      padding: 0 1em;
+    }
+
+    .source,
+    .time {
+      .font-s1;
+      .type-bold;
+      color: @color-medium;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .source {
+      padding-right: .25rem;
+    }
+
+    .time {
+      border-left: 1px solid @color-medium-rare;
+      padding-left: .5rem;
+    }
+  }
+}

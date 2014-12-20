@@ -1,0 +1,25 @@
+<template name="orders">
+  <div class="page orders">
+    {{> nav title='Bestellungen' subtext=orderCount}}
+
+    <div class="content-scrollable">
+      <div class="list-orders">
+        {{#each orders}}
+          <p class="order">
+            <span class="text">{{text}}</span>
+            <div class="details">
+              {{#unless isMyPlace}}<span class="source">{{placeName}}</span>{{/unless}}
+              {{#unless isMyOrder}}<span class="source">{{userName}}</span>{{/unless}}
+              <span class="time" data-livestamp="{{date}}"></span>
+            </div>
+          </p>
+        {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">Noch keine Bestellungen</div>
+            <div class="subtitle-message">Tippe bei einem Lokal in dem du vorbestellen möchtest rechts unten auf 'Vorbestellen'. <a href="{{pathFor 'places'}}">Zurück zu allen Lokalen</a></div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>
