@@ -12,4 +12,4 @@ Template.nav.rendered = ->
 # unexpected ways that this can happen (for example oauth, or 
 # hot code push), but we can't rely on going back in such cases.
 Template.nav.helpers back: ->
-  @back and not history.state.initial
+  @back and not history.state?.initial
