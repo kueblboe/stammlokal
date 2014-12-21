@@ -7,3 +7,6 @@ Template.orders.helpers
 
   isMyOrder: ->
     @userId is Meteor.userId()
+
+  isoDate: ->
+    @date.toISOString()
