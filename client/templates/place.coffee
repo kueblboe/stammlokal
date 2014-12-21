@@ -50,7 +50,7 @@ Template.place.events
     text = $(e.target).find("#text").val()
     time = Session.get TIME_KEY
 
-    Meteor.call "order", @title, text, time, (error) ->
+    Meteor.call "order", @name, text, time, (error) ->
       if error
         throwError error.reason
       else

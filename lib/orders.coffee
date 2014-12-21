@@ -9,7 +9,9 @@ Meteor.methods
     Orders.insert
       userId: @userId
       placeName: placeName
+      placeAvatar: "/img/places/320x350/#{placeName}.jpg"
       userName: Meteor.user().profile.name
+      userAvatar: Meteor.user().services.twitter.profile_image_url_https
       text: text
       confirmed: false
       served: false

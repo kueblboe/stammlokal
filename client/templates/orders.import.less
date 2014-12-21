@@ -7,7 +7,7 @@
 
     p {
       .font-s3;
-      padding: 1em 1.25em;
+      padding: 1em 4.25em;
       border-bottom: solid 1px @color-well;
       position: relative;
     }
@@ -31,22 +31,50 @@
       padding: 0 1em;
     }
 
-    .source,
-    .time {
+    .source{
       .font-s1;
       .type-bold;
       color: @color-medium;
       display: inline-block;
       vertical-align: middle;
-    }
-
-    .source {
       padding-right: .25rem;
     }
 
     .time {
-      border-left: 1px solid @color-medium-rare;
-      padding-left: .5rem;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      line-height: 38px;
+      height: 40px;
+      width: 40px;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 50%;
     }
+
+    .avatar {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  .future {
+    border-color: green;
+  }
+
+  .close {
+    border-color: orange;
+  }
+
+  .past {
+    border-color: red;
   }
 }

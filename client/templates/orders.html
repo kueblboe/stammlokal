@@ -8,8 +8,14 @@
           <p class="order">
             <span class="text">{{text}}</span>
             <div class="details">
-              {{#unless isMyPlace}}<span class="source">{{placeName}}</span>{{/unless}}
-              {{#unless isMyOrder}}<span class="source">{{userName}}</span>{{/unless}}
+              {{#if isMyPlace}}
+                <img class="avatar" src={{userAvatar}} alt="Profilbild"/>
+                <span class="source">{{userName}}</span>
+              {{/if}}
+              {{#if isMyOrder}}
+                <img class="avatar" src={{placeAvatar}} alt="Profilbild"/>
+                <span class="source">{{placeName}}</span>
+              {{/if}}
               <span class="time" data-livestamp="{{date}}"></span>
             </div>
           </p>
