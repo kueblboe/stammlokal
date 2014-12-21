@@ -5,8 +5,8 @@
 Meteor.settings = {}  if typeof Meteor.settings is "undefined"
 _.defaults Meteor.settings,
   twitter:
-    consumerKey: "PLfrg2bUh0oL0asi3R2fumRjm"
-    secret: "sRI8rnwO3sx7xUAxNWTX0WEDWph3WEBHu6tTdJYQ5wVrJeVCCt"
+    consumerKey: "NBNynD1eGeyF9Bfe3R5OfVM9S"
+    secret: "ZHsDoyXksyxy5KqGQ1nzpQ0K61ENmq22BbQaFex7G2gPnlaqGe"
 
 ServiceConfiguration.configurations.remove service: "twitter"
 ServiceConfiguration.configurations.insert
