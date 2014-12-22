@@ -31,13 +31,27 @@
       padding: 0 1em;
     }
 
-    .source{
+
+    .source,
+    .status{
       .font-s1;
       .type-bold;
       color: @color-medium;
       display: inline-block;
       vertical-align: middle;
+    }
+
+    .source {
       padding-right: .25rem;
+    }
+
+    .status {
+      border-left: 1px solid @color-medium-rare;
+      padding-left: .5rem;
+      i.fa {
+        font-size: 10px;
+        color: green;
+      }
     }
 
     .time {

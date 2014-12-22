@@ -15,6 +15,11 @@
               {{#if isMyOrder}}
                 <img class="avatar" src={{placeAvatar}} alt="Profilbild"/>
                 <span class="source">{{placeName}}</span>
+                {{#if confirmed}}
+                  <span class="status"><i class="fa fa-check"></i><i class="fa fa-check"></i> bestätigt</span>
+                {{else}}
+                  <span class="status"><i class="fa fa-check"></i> gesendet</span>
+                {{/if}}
               {{/if}}
               <span class="time" data-livestamp="{{isoDate}}"></span>
             </div>
