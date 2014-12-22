@@ -67,7 +67,6 @@
       margin-bottom: .5rem;
       padding: 0 1em;
 
-      &:after { content: '\2026'; } // Ellipsis
       &:empty { display: none; }
     }
 
@@ -125,29 +124,6 @@
     .font-s3;
     background: @color-empty;
     padding: .75rem 1.25rem;
-  }
-
-  .list-directions {
-    counter-reset: ol-counter;
-    list-style-type: none;
-
-    .item-direction {
-      &:before {
-        color: @color-primary;
-        content: counter(ol-counter);
-        counter-increment: ol-counter;
-        display: inline-block;
-        float: left;
-        vertical-align: middle;
-        width: 1.5rem;
-        margin-right: .25rem;
-      }
-
-      .text {
-        display: block;
-        overflow: hidden;
-      }
-    }
   }
 
   .list-directions + .btn-primary {
