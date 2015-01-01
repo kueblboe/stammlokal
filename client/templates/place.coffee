@@ -73,6 +73,7 @@ Template.place.events
   "click .js-show-feed": (event) ->
     event.stopPropagation()
     Template.place.setTab "feed"
+    Overlay.open('authOverlay') unless Meteor.user()
 
   "click .js-select-15": (event) ->
     event.stopPropagation()

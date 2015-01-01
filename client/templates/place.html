@@ -53,7 +53,7 @@
           <a class="btn-tertiary {{#if isActiveTime 60}}active{{/if}} js-select-60">60 min</a>
         </div>
         <textarea id="text" rows="15" placeholder="Was möchtest du essen?"></textarea>
-        <button type="submit" class="btn-primary">Vorbestellen</button>
+        {{#if currentUser}}<button type="submit" class="btn-primary">Vorbestellen</button>{{/if}}
       </form>
     </div>
   </div>
