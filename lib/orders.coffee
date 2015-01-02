@@ -11,7 +11,7 @@ Meteor.methods
       placeName: placeName
       placeAvatar: "/img/places/320x350/#{placeName}.jpg"
       userName: Meteor.user().profile.name
-      userAvatar: Meteor.user().services.twitter.profile_image_url_https
+      userAvatar: Meteor.user().profile.avatar
       text: text
       confirmed: false
       served: false

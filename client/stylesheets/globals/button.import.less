@@ -66,36 +66,12 @@
     &:active { box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset; }
   }
 
-  &[class*="camera"] {
-    border-radius: 10em;
-    box-shadow: @color-primary 0 0 0px 2px inset;
-    font-size: 20px; //reset
-    height: 4rem;
-    letter-spacing: 0; //reset
-    padding: 0; //reset
-    text-indent: 0; //reset
-    width: 4rem;
+  &[class*="facebook"] {
+    background-color: @color-facebook;
+    color: @color-empty;
 
-    .icon-camera {
-      @dimension-camera: 3.5rem;
-      .position(absolute, 50%, 50%, auto, auto, @dimension-camera, @dimension-camera );
-      .transform(translate3d(50%, -50%,0));
-      background-color: @color-primary;
-      border-radius: 10em;
-      color: @color-empty;
-      display: inline-block;
-      line-height: @dimension-camera;
-    }
-
-    &:hover {
-      box-shadow: darken(@color-primary, 3%) 0 0 0px 2px inset;
-      .icon-camera { background-color: darken(@color-primary, 3%); }
-    }
-
-    &:active {
-      box-shadow: darken(@color-primary, 3%) 0 0 0px 2px inset;
-      .icon-camera { background-color: darken(@color-primary, 3%); }
-    }
+    &:hover { background-color: darken(@color-facebook, 10%); }
+    &:active { box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset; }
   }
 
   &[disabled] { opacity: .5; }

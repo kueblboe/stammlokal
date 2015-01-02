@@ -8,5 +8,9 @@ Template.authOverlay.created = ->
   @autorun ->
     Overlay.close()  if Meteor.userId() and Overlay.template() is "authOverlay"
 
-Template.authOverlay.events "click .js-signin": ->
-  Meteor.loginWithTwitter loginStyle: "redirect"
+Template.authOverlay.events
+  "click .js-signin.btn-twitter": ->
+    Meteor.loginWithTwitter loginStyle: "redirect"
+  "click .js-signin.btn-facebook": ->
+    Meteor.loginWithFacebook {loginStyle: "redirect"}, (error) ->
+      console.log error

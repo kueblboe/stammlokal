@@ -56,7 +56,6 @@ Template.place.events
       else
         Router.go 'orders'
 
-Template.place.events
   "click .js-add-bookmark": (event) ->
     event.preventDefault()
     return Overlay.open("authOverlay")  unless Meteor.userId()

@@ -12,6 +12,7 @@ tmeasday:publish-counts@0.3.1
 iron:router
 percolate:velocityjs
 accounts-twitter
+accounts-facebook
 service-configuration
 percolate:wireframing
 mdg:camera
@@ -21,4 +22,3 @@ request
 launch-screen
 coffeescript
 momentjs:moment
-
