@@ -31,9 +31,7 @@
       padding: 0 1em;
     }
 
-
-    .source,
-    .status{
+    .details {
       .font-s1;
       .type-bold;
       color: @color-medium;
@@ -42,6 +40,12 @@
     }
 
     .source {
+      padding-right: .25rem;
+    }
+
+    .detail-middle {
+      border-left: 1px solid @color-medium-rare;
+      padding-left: .5rem;
       padding-right: .25rem;
     }
 
@@ -54,7 +58,7 @@
       }
     }
 
-    .time {
+    .time, .confirm {
       position: absolute;
       right: 10px;
       top: 0;
@@ -66,6 +70,19 @@
       border-width: 1px;
       border-style: solid;
       border-radius: 50%;
+    }
+
+    .confirm {
+      border-color: green;
+      &:hover, &.active {
+        background: green;
+        i.fa {
+          color: @color-empty;
+        }
+      }
+      i.fa {
+        color: green;
+      }
     }
 
     .avatar {

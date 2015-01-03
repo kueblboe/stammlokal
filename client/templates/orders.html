@@ -16,13 +16,18 @@
                 <img class="avatar" src={{placeAvatar}} alt="Profilbild"/>
                 <span class="source">{{placeName}}</span>
               {{/if}}
+              <span class="detail-middle">{{time}}</span>
               {{#if confirmed}}
                 <span class="status"><i class="fa fa-check"></i><i class="fa fa-check"></i> bestätigt</span>
               {{else}}
                 <span class="status"><i class="fa fa-check"></i> gesendet</span>
               {{/if}}
-              <span class="time" data-livestamp="{{isoDate}}"></span>
             </div>
+            {{#if unconfirmedForMyPlace}}
+              <a href="#" class="confirm"><i class="fa fa-check"></i></a>
+            {{else}}
+              <span class="time" data-livestamp="{{isoDate}}"></span>
+            {{/if}}
           </p>
         {{else}}
           <div class="wrapper-message">
