@@ -12,5 +12,5 @@ Template.authOverlay.events
   "click .js-signin.btn-twitter": ->
     Meteor.loginWithTwitter loginStyle: "redirect"
   "click .js-signin.btn-facebook": ->
-    Meteor.loginWithFacebook {loginStyle: "redirect"}, (error) ->
+    Meteor.loginWithFacebook (error) ->
       console.log error
