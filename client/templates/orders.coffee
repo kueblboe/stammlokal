@@ -1,6 +1,6 @@
 Template.orders.helpers
   orders: ->
-    Orders.find({}, {sort: {date: 1}})
+    Orders.find({}, {sort: {arrivalTime: 1}})
 
   isMyPlace: ->
     @placeName is Meteor.user().myPlace
@@ -13,10 +13,10 @@ Template.orders.helpers
     @userId is Meteor.userId()
 
   isoDate: ->
-    @date.toISOString()
+    @arrivalTime.toISOString()
 
   time: ->
-    moment(@date).format('HH:mm')
+    moment(@arrivalTime).format('HH:mm')
 
 Template.orders.events
   'click a.confirm': ->

@@ -15,7 +15,7 @@ Meteor.methods
       text: text
       confirmed: false
       served: false
-      date: moment().add(minutes, 'minutes').toDate()
+      arrivalTime: moment().add(minutes, 'minutes').toDate()
 
   confirm: (orderId) ->
     check @userId, String
