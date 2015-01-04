@@ -5,8 +5,8 @@
     <div class="content-scrollable">
       <div class="list-orders">
         {{#each orders}}
-          <p class="order">
-            <span class="text">{{text}}</span>
+          <p class="order {{isServed}}">
+            <div class="text">{{text}}</div>
             <div class="details">
               {{#if isMyPlace}}
                 <img class="avatar" src={{userAvatar}} alt="Profilbild"/>
@@ -17,16 +17,28 @@
                 <span class="source">{{placeName}}</span>
               {{/if}}
               <span class="detail-middle">{{time}}</span>
-              {{#if confirmed}}
-                <span class="status"><i class="fa fa-check"></i><i class="fa fa-check"></i> bestätigt</span>
+              {{#if served}}
+                <span class="status"><i class="fa fa-check"></i><i class="fa fa-check"></i><i class="fa fa-check"></i> serviert</span>
               {{else}}
-                <span class="status"><i class="fa fa-check"></i> gesendet</span>
+                {{#if confirmed}}
+                  <span class="status"><i class="fa fa-check"></i><i class="fa fa-check"></i> bestätigt</span>
+                {{else}}
+                  <span class="status"><i class="fa fa-check"></i> gesendet</span>
+                {{/if}}
               {{/if}}
             </div>
-            {{#if unconfirmedForMyPlace}}
-              <a href="#" class="confirm"><i class="fa fa-check"></i></a>
+            {{#if served}}
+              <span class="time"><i class="fa fa-cutlery"></i></span>
             {{else}}
-              <span class="time" data-livestamp="{{isoDate}}"></span>
+              {{#if isMyPlace}}
+                {{#if confirmed}}
+                  <a class="serve" data-livestamp="{{isoDate}}"></a>
+                {{else}}
+                  <a href="#" class="confirm"><i class="fa fa-check"></i></a>
+                {{/if}}
+              {{else}}
+                <span class="time" data-livestamp="{{isoDate}}"></span>
+              {{/if}}
             {{/if}}
           </p>
         {{else}}

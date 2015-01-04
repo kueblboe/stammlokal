@@ -1,13 +1,12 @@
 Template.orders.helpers
   orders: ->
-    Orders.find({}, {sort: {arrivalTime: 1}})
+    Orders.find({}, {sort: {served: 1, arrivalTime: 1}})
+
+  isServed: ->
+    @served and "is-served"
 
   isMyPlace: ->
     @placeName is Meteor.user().myPlace
-
-  unconfirmedForMyPlace: ->
-    @placeName is Meteor.user().myPlace and not @confirmed
-
 
   isMyOrder: ->
     @userId is Meteor.userId()
@@ -21,3 +20,6 @@ Template.orders.helpers
 Template.orders.events
   'click a.confirm': ->
     Meteor.call 'confirm', @_id
+
+  'click a.serve': ->
+    Meteor.call 'serve', @_id

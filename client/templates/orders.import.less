@@ -24,10 +24,13 @@
     text-align: center;
     z-index: 1;
 
+    &.is-served {
+      opacity: 0.6;
+    }
+
     .text {
       .font-s3;
       color: @color-well;
-      margin-bottom: .5rem;
       padding: 0 1em;
     }
 
@@ -58,7 +61,8 @@
       }
     }
 
-    .time, .confirm {
+    .time, .confirm, .serve {
+      color: @color-well;
       position: absolute;
       right: 10px;
       top: 0;

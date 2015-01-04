@@ -6,11 +6,11 @@ Meteor.publish "place", (name) ->
   BookmarkCounts.find({placeName: name})
 
 Meteor.publish "orders", ->
-  Orders.find {userId: @userId, served: false}, {sort: {date: -1}}
+  Orders.find {userId: @userId}, {sort: {date: -1}}
 
 Meteor.publish "ordersForMyPlace", ->
   myPlace = Meteor.users.findOne(@userId).myPlace
-  Orders.find {placeName: myPlace, served: false}, {sort: {date: -1}}
+  Orders.find {placeName: myPlace}, {sort: {date: -1}}
 
 # autopublish the user's bookmarks
 Meteor.publish null, ->
