@@ -1,6 +1,6 @@
 Template.orders.helpers
   orders: ->
-    Orders.find()
+    Orders.find({}, {sort: {date: 1}})
 
   isMyPlace: ->
     @placeName is Meteor.user().myPlace
