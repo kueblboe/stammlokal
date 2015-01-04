@@ -1,6 +1,10 @@
 TAB_KEY = "placeShowTab"
 TIME_KEY = "orderTime"
 
+Template.place.helpers
+  formattedPrice: ->
+    "#{@price.toFixed(2).replace(/\./g, ',')} €"
+
 Template.place.created = ->
   Template.place.setTab "place"
   Session.set TIME_KEY, 30

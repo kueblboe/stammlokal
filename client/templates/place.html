@@ -28,17 +28,27 @@
 
     <div class="content-scrollable static-nav make-scrollable">
       <h2 class="list-title">Essen</h2>
-      <ul class="list-ingredients">
-        {{#each ingredients}}
-          <li class="item-ingredient">{{this}}</li>
+      <ul class="list-meals">
+        {{#each meals}}
+          <li class="item-meal">
+            <div class="text">
+              {{name}}
+              <div class="description">{{description}}</div>
+            </div>
+            <div class="price">{{formattedPrice}}</div>
+          </li>
         {{/each}}
       </ul>
 
       <h2 class="list-title">Trinken</h2>
-      <ul class="list-directions">
-        {{#each directions}}
-          <li class="item-direction">
-            <span class="text">{{this}}</span>
+      <ul class="list-beverages">
+        {{#each beverages}}
+          <li class="item-beverage">
+            <div class="text">
+              {{name}}
+              <div class="description">{{description}}</div>
+            </div>
+            <div class="price">{{formattedPrice}}</div>
           </li>
         {{/each}}
       </ul>

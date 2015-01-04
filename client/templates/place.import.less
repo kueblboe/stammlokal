@@ -114,19 +114,41 @@
     margin-top: -1px; // Fixes flicker from animations behind content-scrollable
   }
 
-  .item-ingredient + .item-ingredient,
-  .item-direction + .item-direction {
+  .item-meal + .item-meal,
+  .item-beverage + .item-beverage {
     border-top: 1px solid @color-raw-alt;
   }
 
-  .item-ingredient,
-  .item-direction {
+  .item-meal,
+  .item-beverage {
     .font-s3;
+    position: relative;
     background: @color-empty;
     padding: .75rem 1.25rem;
+
+    .text {
+      margin-right: 40px;
+    }
+
+    .description, .price {
+      .font-s1;
+      .type-bold;
+      color: @color-medium;
+    }
+
+    .price {
+      position: absolute;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      line-height: 38px;
+      height: 40px;
+      width: 40px;
+    }
   }
 
-  .list-directions + .btn-primary {
+  .list-beverages + .btn-primary {
     .force-wrap;
     white-space: normal;
     width: 100%;
