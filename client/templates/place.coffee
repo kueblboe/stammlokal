@@ -96,3 +96,12 @@ Template.place.events
 
   "click .js-uncollapse": ->
     Template.place.setTab "place"
+
+  "click li": (event) ->
+    event.preventDefault()
+    return Overlay.open("authOverlay")  unless Meteor.userId()
+    item = $(event.target).closest('li')
+    itemText = item.addClass("highlight").find(".name").text()
+    text = $("#text").val()
+    $("#text").val("#{text}\n#{itemText}")
+    Meteor.setTimeout (-> item.removeClass("highlight")), 1000

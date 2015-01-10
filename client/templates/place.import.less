@@ -1,3 +1,12 @@
+@-webkit-keyframes highlight {
+  0% {background-color: @color-empty}
+  50% {background-color: lighten(@color-primary, 30%)}
+}
+@keyframes highlight {
+  0% {background-color: @color-empty}
+  50% {background-color: lighten(@color-primary, 30%)}
+}
+
 .page.place {
   background: @color-empty;
   overflow: hidden;
@@ -112,6 +121,10 @@
   .content-scrollable {
     top: 100%;
     margin-top: -1px; // Fixes flicker from animations behind content-scrollable
+  }
+
+  .highlight {
+    .animation(highlight 1s ease-in);
   }
 
   .item-meal + .item-meal,
