@@ -24,7 +24,7 @@
 
       <div class="btns-group slide">
         <a class="btn-secondary {{#if isActiveTab 'make'}}active{{/if}} {{#if isActiveTab 'place'}}no-state{{/if}} js-show-place">Speisekarte</a>
-        <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'place'}}no-state{{/if}} js-show-feed">Vorbestellen</a>
+        <a id="btn-order" class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'place'}}no-state{{/if}} js-show-feed">Vorbestellen</a>
       </div>
     </div>
 
@@ -34,11 +34,7 @@
       <ul class="list-meals">
         {{#each meals}}
           <li class="item-meal">
-            <div class="text">
-              <div class="name">{{name}}</div>
-              <div class="description">{{description}}</div>
-            </div>
-            <div class="price">{{formattedPrice}}</div>
+            {{> menuItem}}
           </li>
         {{/each}}
       </ul>
@@ -47,11 +43,7 @@
       <ul class="list-beverages">
         {{#each beverages}}
           <li class="item-beverage">
-            <div class="text">
-              {{name}}
-              <div class="description">{{description}}</div>
-            </div>
-            <div class="price">{{formattedPrice}}</div>
+            {{> menuItem}}
           </li>
         {{/each}}
       </ul>

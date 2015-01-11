@@ -1,10 +1,6 @@
 TAB_KEY = "placeShowTab"
 TIME_KEY = "orderTime"
 
-Template.place.helpers
-  formattedPrice: ->
-    "#{@price.toFixed(2).replace(/\./g, ',')} €"
-
 Template.place.created = ->
   Template.place.setTab "place"
   Session.set TIME_KEY, 30
@@ -100,8 +96,16 @@ Template.place.events
   "click li": (event) ->
     event.preventDefault()
     return Overlay.open("authOverlay")  unless Meteor.userId()
-    item = $(event.target).closest('li')
-    itemText = item.addClass("highlight").find(".name").text()
-    text = $("#text").val()
-    $("#text").val("#{text}\n#{itemText}")
-    Meteor.setTimeout (-> item.removeClass("highlight")), 1000
+    item        = $(event.target).closest('li')
+    itemText    = item.find(".name").text()
+    orderButton = $('#btn-order')
+    textField   = $("#text")
+    text        = textField.val()
+    
+    item.addClass("highlight")
+    orderButton.addClass("highlight")
+    textField.val("#{text}\n#{itemText}")
+    Meteor.setTimeout((->
+      item.removeClass("highlight")
+      orderButton.removeClass("highlight")
+    ), 1000)
