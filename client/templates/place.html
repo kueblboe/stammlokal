@@ -39,14 +39,16 @@
         {{/each}}
       </ul>
 
-      <h2 class="list-title">Trinken</h2>
-      <ul class="list-beverages">
-        {{#each beverages}}
-          <li class="item-beverage">
-            {{> menuItem}}
-          </li>
-        {{/each}}
-      </ul>
+      {{#if beverages}}
+        <h2 class="list-title">Trinken</h2>
+        <ul class="list-beverages">
+          {{#each beverages}}
+            <li class="item-beverage">
+              {{> menuItem}}
+            </li>
+          {{/each}}
+        </ul>
+      {{/if}}
     </div>
 
     <div class="content-scrollable static-nav feed-scrollable">
