@@ -1,10 +1,10 @@
-Local Market
-============
+Stammlokal
+==========
 
-Local Market is an open source app powered by Meteor and made by [Percolate Studio](http://percolatestudio.com). In this example app we explore intermediate techniques:
+Vorbestellen in deinen Stammlokalen.
 
-  - Using a sample database to generate lists and items
-  - Integrating OAUTH with Meteor's accounts-ui package
-  - Cordova integration to use device phone and GPS
-  - Mobile UI & UX
-  
+Wir sind es leid zu warten. Unsere Mittagspause ist zu wertvoll, um sie in einer Warteschlange zu verbringen. Darum haben wir Stammlokal gebaut. Vorbestellen in deinen Stammlokalen.
+
+Stammlokal ist aktuell im Betatest. Falls du mit deinem Lokal dabei sein oder eines vorschlagen möchtest, schick uns doch eine Nachricht.
+
+Während des Betatests ist Stammlokal komplett kostenlos. Danach werden Lokalen ein geringer Anteil des Bestellwertes in Rechnung gestellt. Für Besteller bleibt die Anwendung kostenlos.
